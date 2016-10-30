@@ -59,6 +59,9 @@ add annotation to make this service discoverable be Eureka
 ## Could not autowire field:RestTemplate in Spring boot application
 - http://stackoverflow.com/questions/36151421/could-not-autowire-fieldresttemplate-in-spring-boot-application
 
+## Microservices - RestTemplate UnknownHostException
+- http://stackoverflow.com/questions/37159662/microservices-resttemplate-unknownhostexception
+
 ## Links
 - Service Registration and Discovery: https://spring.io/guides/gs/service-registration-and-discovery/
 - Edit wiki guide: https://help.github.com/categories/writing-on-github/
