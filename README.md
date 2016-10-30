@@ -1,16 +1,57 @@
 # microservices
-## Create service-registration
+## service-registration
+### generate service skeleton
 goto: http://start.spring.io/ and in field Search for dependencies type:
 
 Cloud Boostrap, Web, Eureka Server
 
-## Create account-service
+### add configuration
+'''
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+server:
+  port: 1111
+'''
+
+### edit main class
+add annotation to make this service discovery server
+'''
+@EnableEurekaServer
+'''
+
+## account-service
+### generate service skeleton
 goto http://start.spring.io/ and add dependencies (see Search for dependencies field):
 
 Client Config, Cloud Bootstrap, Eureka Discovery
 
-Licence
--------
+### add configuration
+'''
+spring:
+  application:
+    name: account-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+server:
+  port: 2222
+'''
+
+### edit main class
+add annotation to make this service discoverable be Eureka
+'''
+@EnableDiscoveryClient
+'''
+
+## Licence
 
 MIT License
 
