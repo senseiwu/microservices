@@ -52,14 +52,15 @@ add annotation to make this service discoverable be Eureka
 ```
 
 ## FAQ
+
 ### EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY'RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE
 - https://github.com/spring-cloud/spring-cloud-netflix/issues/1195
 - https://github.com/spring-cloud/spring-cloud-netflix/issues/1322
 
-## Could not autowire field:RestTemplate in Spring boot application
+### Could not autowire field:RestTemplate in Spring boot application
 - http://stackoverflow.com/questions/36151421/could-not-autowire-fieldresttemplate-in-spring-boot-application
 
-## Microservices - RestTemplate UnknownHostException
+### Microservices - RestTemplate UnknownHostException
 - http://stackoverflow.com/questions/37159662/microservices-resttemplate-unknownhostexception
 
 ## Links
