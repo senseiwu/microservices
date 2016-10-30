@@ -74,6 +74,7 @@ Bean must have default constructor and setters, otherwise it can't find proper c
 - Microservices: http://www.martinfowler.com/microservices/
 - Microservices with spring: https://spring.io/blog/2015/07/14/microservices-with-spring
 - Microservice Registration and Discovery with Spring Cloud and Netflix's Eureka: https://spring.io/blog/2015/01/20/microservice-registration-and-discovery-with-spring-cloud-and-netflix-s-eureka
+- Microservices: http://microservices.io/
 - Spring Boot Reference Guide: http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/
 - Spring Cloud Netflix: http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
 - Service Registration and Discovery: https://spring.io/guides/gs/service-registration-and-discovery/
