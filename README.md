@@ -51,6 +51,18 @@ add annotation to make this service discoverable be Eureka
 @EnableDiscoveryClient
 ```
 
+## FAQ
+### EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY'RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE
+- https://github.com/spring-cloud/spring-cloud-netflix/issues/1195
+- https://github.com/spring-cloud/spring-cloud-netflix/issues/1322
+
+## Could not autowire field:RestTemplate in Spring boot application
+- http://stackoverflow.com/questions/36151421/could-not-autowire-fieldresttemplate-in-spring-boot-application
+
+## Links
+- Service Registration and Discovery: https://spring.io/guides/gs/service-registration-and-discovery/
+- Edit wiki guide: https://help.github.com/categories/writing-on-github/
+
 ## Licence
 
 MIT License
