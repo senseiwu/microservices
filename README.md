@@ -6,7 +6,7 @@ goto: http://start.spring.io/ and in field Search for dependencies type:
 Cloud Boostrap, Web, Eureka Server
 
 ### add configuration
-'''
+```
 eureka:
   instance:
     hostname: localhost
@@ -16,13 +16,13 @@ eureka:
 
 server:
   port: 1111
-'''
+```
 
 ### edit main class
 add annotation to make this service discovery server
-'''
+```
 @EnableEurekaServer
-'''
+```
 
 ## account-service
 ### generate service skeleton
@@ -31,7 +31,7 @@ goto http://start.spring.io/ and add dependencies (see Search for dependencies f
 Client Config, Cloud Bootstrap, Eureka Discovery
 
 ### add configuration
-'''
+```
 spring:
   application:
     name: account-service
@@ -43,13 +43,13 @@ eureka:
 
 server:
   port: 2222
-'''
+```
 
 ### edit main class
 add annotation to make this service discoverable be Eureka
-'''
+```
 @EnableDiscoveryClient
-'''
+```
 
 ## Licence
 
