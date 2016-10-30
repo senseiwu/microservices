@@ -63,6 +63,9 @@ add annotation to make this service discoverable be Eureka
 ### Microservices - RestTemplate UnknownHostException
 - http://stackoverflow.com/questions/37159662/microservices-resttemplate-unknownhostexception
 
+### rest POST
+Bean must have default constructor and setters, otherwise it can't find proper constructor - find out why.
+
 ## Links
 - Service Registration and Discovery: https://spring.io/guides/gs/service-registration-and-discovery/
 - Edit wiki guide: https://help.github.com/categories/writing-on-github/

@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 /**
  * Created by tomek on 10/30/16.
  */
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class EventAccessPermissionDenied extends RuntimeException {
-    public EventAccessPermissionDenied(String message) {
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class EventNotFoundException extends RuntimeException {
+    public EventNotFoundException(String message) {
         super(message);
     }
 }

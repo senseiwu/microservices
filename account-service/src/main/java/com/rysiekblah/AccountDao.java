@@ -1,13 +1,10 @@
 package com.rysiekblah;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
+
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by tomek on 10/30/16.

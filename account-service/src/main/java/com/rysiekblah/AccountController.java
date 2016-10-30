@@ -17,6 +17,10 @@ public class AccountController {
 
     @RequestMapping("account/{accountId}")
     public String getAccountRole(@PathVariable("accountId") Integer accountId) {
-        return accountDao.getByAccountId(accountId).getRole().name();
+        Account account = accountDao.getByAccountId(accountId);
+        if (account == null) {
+            return null;
+        }
+        return account.getRole().name();
     }
 }
