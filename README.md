@@ -70,7 +70,14 @@ Bean must have default constructor and setters, otherwise it can't find proper c
 - http://www.leveluplunch.com/java/tutorials/014-post-json-to-spring-rest-webservice/
 
 ## Links
+- Microservices: http://www.martinfowler.com/articles/microservices.html
+- Microservices: http://www.martinfowler.com/microservices/
+- Microservices with spring: https://spring.io/blog/2015/07/14/microservices-with-spring
+- Microservice Registration and Discovery with Spring Cloud and Netflix's Eureka: https://spring.io/blog/2015/01/20/microservice-registration-and-discovery-with-spring-cloud-and-netflix-s-eureka
+- Spring Boot Reference Guide: http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/
+- Spring Cloud Netflix: http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
 - Service Registration and Discovery: https://spring.io/guides/gs/service-registration-and-discovery/
+- Building REST services with Spring: https://spring.io/guides/tutorials/bookmarks/
 - Edit wiki guide: https://help.github.com/categories/writing-on-github/
 
 ## Licence
