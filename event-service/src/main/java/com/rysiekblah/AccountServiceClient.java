@@ -18,13 +18,8 @@ public class AccountServiceClient {
 
     private String serviceUrl = "http://ACCOUNT-SERVICE";
 
-//    public AccountServiceClient() {
-//        String serviceUrl = "http://ACCOUNT-SERVICE";
-//        this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://" + serviceUrl;
-//    }
-
-    public String getRoleForEvent(String accountId) {
-        String role = restTemplate.getForObject(serviceUrl + "/account/{number}", String.class, accountId);
+    public String getRoleForEvent(Long accountId, Long eventId) {
+        String role = restTemplate.getForObject(serviceUrl + "/accout/{accountId}/event/{eventId}", String.class, accountId, eventId);
         if (role == null) {
             throw new AccountNotFoundException("Account with id: " + accountId + " not found");
         }

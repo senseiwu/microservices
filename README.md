@@ -66,6 +66,9 @@ add annotation to make this service discoverable be Eureka
 ### rest POST
 Bean must have default constructor and setters, otherwise it can't find proper constructor - find out why.
 
+### Post JSON to spring REST webservice
+- http://www.leveluplunch.com/java/tutorials/014-post-json-to-spring-rest-webservice/
+
 ## Links
 - Service Registration and Discovery: https://spring.io/guides/gs/service-registration-and-discovery/
 - Edit wiki guide: https://help.github.com/categories/writing-on-github/

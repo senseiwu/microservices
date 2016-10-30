@@ -3,6 +3,8 @@ package com.rysiekblah;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -20,12 +22,12 @@ public class EventController {
     @Autowired
     private EventDao eventDao;
 
-    @RequestMapping("event/account/{accountId}")
-    public String getRole(@PathVariable("accountId") String accountId) {
-        String role = accountServiceClient.getRoleForEvent(accountId);
-        logger.info("Account: " + accountId + " has Role: " + role);
-        return role;
-    }
+//    @RequestMapping("event/account/{accountId}")
+//    public String getRole(@PathVariable("accountId") String accountId) {
+//        String role = accountServiceClient.getRoleForEvent(accountId);
+//        logger.info("Account: " + accountId + " has Role: " + role);
+//        return role;
+//    }
 
     @RequestMapping("event/{eventId}")
     public Event getEvent(@PathVariable Long eventId) {
@@ -38,9 +40,14 @@ public class EventController {
     }
 
     @RequestMapping(value = "event/update", method = RequestMethod.POST)
-    public Event updateEvent(@RequestBody Event event) {
+    public ResponseEntity<Event> updateEvent(@RequestBody Event event) {
         logger.info("Update event " + event);
-        return null;
+        String role = accountServiceClient.getRoleForEvent(event.getAdmin(), event.getId());
+        logger.info("ROLE : " + role);
+        if(!role.equals("2")) {
+            throw new EventAccessPermissionDenied("Access denied");
+        }
+        return new ResponseEntity<Event>(eventDao.editEvent(event), HttpStatus.OK);
     }
 
     /*

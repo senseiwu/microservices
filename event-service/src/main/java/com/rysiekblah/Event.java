@@ -11,6 +11,7 @@ public class Event {
     private String description;
     private String organizer;
     private String where;
+    private long admin;
 
     public Event() {
 
@@ -52,6 +53,10 @@ public class Event {
         return where;
     }
 
+    public long getAdmin() {
+        return admin;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -70,6 +75,10 @@ public class Event {
 
     public void setWhere(String where) {
         this.where = where;
+    }
+
+    public void setAdmin(long admin) {
+        this.admin = admin;
     }
 
     @Override

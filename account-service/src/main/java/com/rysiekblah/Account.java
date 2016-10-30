@@ -11,9 +11,9 @@ public class Account {
     private long accountId;
     private String name;
     private AccountRoles role;
-    private Map<Integer, Integer> eventRoleMap;
+    private Map<Long, Integer> eventRoleMap;
 
-    public Account(long accountId, String name, AccountRoles role, Map<Integer, Integer> eventRoleMap) {
+    public Account(long accountId, String name, AccountRoles role, Map<Long, Integer> eventRoleMap) {
         this.accountId = accountId;
         this.name = name;
         this.role = role;
@@ -28,7 +28,7 @@ public class Account {
         return role;
     }
 
-    public Map<Integer, Integer> getEventRoleMap() {
+    public Map<Long, Integer> getEventRoleMap() {
         return eventRoleMap;
     }
 

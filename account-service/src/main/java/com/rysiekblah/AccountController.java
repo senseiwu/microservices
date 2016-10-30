@@ -23,4 +23,10 @@ public class AccountController {
         }
         return account.getRole().name();
     }
+
+    @RequestMapping("accout/{accountId}/event/{eventId}")
+    public String getEventRole(@PathVariable Long accountId, @PathVariable Long eventId) {
+        Account account = accountDao.getByAccountId(accountId);
+        return account.getEventRoleMap().get(eventId).toString();
+    }
 }
