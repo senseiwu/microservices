@@ -1,21 +1,21 @@
 package com.rysiekblah;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by tomek on 10/30/16.
  */
 
 @RestController
+@RequestMapping("/account")
 public class AccountController {
 
     @Autowired
     private AccountDao accountDao;
 
-    @RequestMapping("account/{accountId}")
+    @RequestMapping("/role/{accountId}")
     public String getAccountRole(@PathVariable("accountId") Integer accountId) {
         Account account = accountDao.getByAccountId(accountId);
         if (account == null) {
@@ -24,7 +24,22 @@ public class AccountController {
         return account.getRole().name();
     }
 
-    @RequestMapping("accout/{accountId}/event/{eventId}")
+    @RequestMapping("/{accountId}")
+    public String getAccountObject(@PathVariable("accountId") Integer accountId) {
+        System.out.println("CALL GET ACCOUNT");
+        Account account =  accountDao.getByAccountId(accountId);
+        System.out.println("Obtained ACCOUNT: " + account.toJson());
+        return account.toJson();
+    }
+
+    @RequestMapping(value = "add", method = RequestMethod.POST, consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addAccount(@RequestBody Account account) {
+        System.out.println("ACCOUNT : " + account.toJson());
+        accountDao.insert(account);
+    }
+
+    @RequestMapping("/{accountId}/event/{eventId}")
     public String getEventRole(@PathVariable Long accountId, @PathVariable Long eventId) {
         Account account = accountDao.getByAccountId(accountId);
         return account.getEventRoleMap().get(eventId).toString();

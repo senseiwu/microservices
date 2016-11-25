@@ -29,4 +29,9 @@ public class AccountDao {
         roles2.put(2l, AccountRoles.ORGANIZER.getCode());
         accounts.put(2l, new Account(2, "Rysiek", AccountRoles.ORGANIZER, roles2));
     }
+
+    public void insert(Account account) {
+        accounts.put(account.getAccountId(), account);
+        System.out.println("ACCOUNTS: " + accounts);
+    }
 }
