@@ -11,18 +11,16 @@ import java.util.Map;
 public class Account {
     private long accountId;
     private String name;
-    private AccountRoles role;
-    private Map<Long, Integer> eventRoleMap;
+    private String role;
 
     public Account() {
 
     }
 
-    public Account(long accountId, String name, AccountRoles role, Map<Long, Integer> eventRoleMap) {
+    public Account(long accountId, String name, String role) {
         this.accountId = accountId;
         this.name = name;
         this.role = role;
-        this.eventRoleMap = eventRoleMap;
     }
 
     public long getAccountId() {
@@ -41,20 +39,12 @@ public class Account {
         this.name = name;
     }
 
-    public AccountRoles getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(AccountRoles role) {
+    public void setRole(String role) {
         this.role = role;
-    }
-
-    public Map<Long, Integer> getEventRoleMap() {
-        return eventRoleMap;
-    }
-
-    public void setEventRoleMap(Map<Long, Integer> eventRoleMap) {
-        this.eventRoleMap = eventRoleMap;
     }
 
     @Override

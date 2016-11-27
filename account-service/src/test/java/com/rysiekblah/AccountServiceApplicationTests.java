@@ -1,6 +1,5 @@
 package com.rysiekblah;
 
-import com.google.common.collect.Maps;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,8 +11,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
-import java.util.Map;
 
 import static org.hamcrest.Matchers.isEmptyString;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -44,27 +41,20 @@ public class AccountServiceApplicationTests {
 
 	@Test
 	public void testInsertUserAndObtain() throws Exception {
+		Account account = new Account(0l, "Tomek", AccountRoles.ADMIN.name());
 		mvc.perform(
 				MockMvcRequestBuilders
 						.post("/account/add")
-						.content(createAccount().toJson())
+						.content(account.toJson())
 						.contentType(MediaType.APPLICATION_JSON)
 		).andExpect(status().isCreated());
 
 		mvc.perform(
 				MockMvcRequestBuilders
-						.get("/account/11")
+						.get("/account/1")
 						.accept(MediaType.APPLICATION_JSON)
 						.contentType(MediaType.APPLICATION_JSON)
-		).andExpect(status().isOk()).andExpect(content().json(createAccount().toJson()));
-
-	}
-
-	private Account createAccount() {
-		Map roles1 = Maps.newHashMap();
-		roles1.put(1l, AccountRoles.ORGANIZER.getCode());
-		roles1.put(2l, AccountRoles.VIEWER.getCode());
-		return new Account(11l, "Tomek", AccountRoles.ADMIN, roles1);
+		).andExpect(status().isOk()).andExpect(content().json(account.toJson()));
 	}
 
 }

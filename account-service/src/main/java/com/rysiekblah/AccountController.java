@@ -16,16 +16,16 @@ public class AccountController {
     private AccountDao accountDao;
 
     @RequestMapping("/role/{accountId}")
-    public String getAccountRole(@PathVariable("accountId") Integer accountId) {
+    public String getAccountRole(@PathVariable("accountId") Integer accountId) throws AccountRepositoryException {
         Account account = accountDao.getByAccountId(accountId);
         if (account == null) {
             return null;
         }
-        return account.getRole().name();
+        return account.getRole();
     }
 
     @RequestMapping("/{accountId}")
-    public String getAccountObject(@PathVariable("accountId") Integer accountId) {
+    public String getAccountObject(@PathVariable("accountId") Integer accountId) throws AccountRepositoryException {
         System.out.println("CALL GET ACCOUNT");
         Account account =  accountDao.getByAccountId(accountId);
         System.out.println("Obtained ACCOUNT: " + account.toJson());
@@ -39,9 +39,9 @@ public class AccountController {
         accountDao.insert(account);
     }
 
-    @RequestMapping("/{accountId}/event/{eventId}")
-    public String getEventRole(@PathVariable Long accountId, @PathVariable Long eventId) {
-        Account account = accountDao.getByAccountId(accountId);
-        return account.getEventRoleMap().get(eventId).toString();
-    }
+//    @RequestMapping("/{accountId}/event/{eventId}")
+//    public String getEventRole(@PathVariable Long accountId, @PathVariable Long eventId) {
+//        Account account = accountDao.getByAccountId(accountId);
+//        return account.getEventRoleMap().get(eventId).toString();
+//    }
 }

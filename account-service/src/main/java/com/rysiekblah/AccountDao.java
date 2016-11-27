@@ -2,6 +2,7 @@ package com.rysiekblah;
 
 import com.google.common.collect.Maps;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
@@ -14,24 +15,22 @@ import java.util.Map;
 public class AccountDao {
     private static Map<Long, Account> accounts = Maps.newHashMap();
 
-    public Account getByAccountId(long accountId) {
-        return accounts.get(accountId);
+    @Autowired
+    private AccountRepository repository;
+
+    public Account getByAccountId(long accountId) throws AccountRepositoryException {
+        //return accounts.get(accountId);
+        return repository.findById(accountId);
     }
 
     static {
-        Map roles1 = Maps.newHashMap();
-        roles1.put(1l, AccountRoles.ORGANIZER.getCode());
-        roles1.put(2l, AccountRoles.VIEWER.getCode());
-        accounts.put(1l, new Account(1, "Tomasz", AccountRoles.ADMIN, roles1));
-
-        Map roles2 = Maps.newHashMap();
-        roles2.put(1l, AccountRoles.VIEWER.getCode());
-        roles2.put(2l, AccountRoles.ORGANIZER.getCode());
-        accounts.put(2l, new Account(2, "Rysiek", AccountRoles.ORGANIZER, roles2));
+        accounts.put(1l, new Account(1, "Tomasz", AccountRoles.ADMIN.name()));
+        accounts.put(2l, new Account(2, "Rysiek", AccountRoles.ORGANIZER.name()));
     }
 
     public void insert(Account account) {
-        accounts.put(account.getAccountId(), account);
-        System.out.println("ACCOUNTS: " + accounts);
+//        accounts.put(account.getAccountId(), account);
+//        System.out.println("ACCOUNTS: " + accounts);
+        repository.insert(account);
     }
 }
