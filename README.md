@@ -51,6 +51,10 @@ add annotation to make this service discoverable be Eureka
 @EnableDiscoveryClient
 ```
 
+## Circuit braker
+Warm up: https://spring.io/guides/gs/circuit-breaker/
+
+
 ## FAQ
 
 ### EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY'RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE
