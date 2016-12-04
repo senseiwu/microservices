@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Configuration Client
+  cloud:
+    config:
+      env: default
+      label: master
+      uri: http://localhost:8044

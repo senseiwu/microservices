@@ -1,6 +1,9 @@
 spring:
   application:
     name: account-service
+  datasource:
+    platform: prod
+    initialize: false
 
 eureka:
   client:

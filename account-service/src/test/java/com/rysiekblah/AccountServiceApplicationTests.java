@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -46,7 +47,7 @@ public class AccountServiceApplicationTests {
     public void testGetExistingDefaultUserById() throws Exception {
         mvc.perform(
                 MockMvcRequestBuilders.get("/account/1")
-        ).andExpect(status().isOk()).andExpect(content().json(new Account(1l, "TESTUSER", "ADMIN").toJson()));
+        ).andExpect(status().isOk()).andExpect(content().json(new Account(1l, "TESTUSER2", "ADMIN").toJson()));
     }
 
     @Test
@@ -55,7 +56,7 @@ public class AccountServiceApplicationTests {
                 MockMvcRequestBuilders
                         .get("/account/byName")
                         .param("name", "TEST")
-        ).andExpect(status().isOk()).andExpect(content().json(gson.toJson(new Account[] {new Account(1l, "TESTUSER", "ADMIN")})));
+        ).andExpect(status().isOk()).andExpect(content().json(gson.toJson(new Account[] {new Account(1l, "TESTUSER2", "ADMIN")})));
     }
 
 	@Test
