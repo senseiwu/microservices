@@ -17,6 +17,6 @@ public class ConfigController {
 
     @RequestMapping("/info")
     public String info() {
-        return "Application " + appDescription + " hosted " + appUrl;
+        return "Application " + appDescription + " url: " + appUrl;
     }
 }
