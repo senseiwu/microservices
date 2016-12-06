@@ -1,5 +1,5 @@
 # microservices - DRAFT
-## service-registration
+## service-registration - this is new entry!!
 ### generate service skeleton
 goto: http://start.spring.io/ and in field Search for dependencies type:
 
